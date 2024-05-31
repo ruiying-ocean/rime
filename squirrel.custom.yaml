@@ -1,0 +1,20 @@
+patch:
+# 特定App默认中/英文输入
+# use the following command to find bundle identifier
+# >> osascript -e 'id of app "XX"'
+  app_options:
+    com.apple.Spotlight: # 聚焦搜索
+      ascii_mode: true             # true默认英文,false默认中文
+    com.runningwithcrayons.Alfred: # alfred
+      ascii_mode: true
+    com.apple.Terminal: # 终端
+      ascii_mode: true
+    com.microsoft.VSCode: # Visual Studio Code
+      ascii_mode: true
+      ascii_punct: true            # 中文状态输出英文标点(半角)
+    com.jetbrains.intellij: # idea
+      ascii_mode: true
+    org.gnu.Emacs: ##Emacs
+      ascii_mode: true
+    com.googlecode.iterm2:
+      ascii_mode: true
