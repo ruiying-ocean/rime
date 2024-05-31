@@ -22,19 +22,19 @@ schema:
     - melt_eng # 英文方案
 switches:
   - name: ascii_mode
-    reset: 0
-    states: [ 中文, 英文 ]
-  - name: emoji_suggestion
-    states: [ "😣️","😁️"]
+    states: [ 中, Ａ ]
+  - name: ascii_punct  # 中英标点
+    states: [ ¥, $ ]
+  - name: traditionalization
+    states: [ 简, 繁 ]
+  - name: emoji
+    states: [ 💀, 😄 ]
     reset: 1
   - name: full_shape
     states: [ 半角, 全角 ]
-    reset: 0
-  - name: transcription
-    states: [ 简体 , 繁体 ]
-    reset: 0
-  - name: ascii_punct
-    states: [ "。，" , "．，" ]
+  - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
+    abbrev: [词, 单]
+    states: [正常, 单字]
     reset: 0
 engine:
   processors:
@@ -365,4 +365,4 @@ key_binder:
     - { when: always, accept: Shift+space, toggle: full_shape }
     - { when: always, accept: Control+period, toggle: ascii_punct }
 menu:
-  page_size: 6
+  page_size: 9
